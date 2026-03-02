@@ -1,0 +1,631 @@
+/* ============================================
+   PINOLAB — LANDING PAGE
+   ============================================ */
+
+:root {
+  --color-bg:        #F6F2EC;
+  --color-bg-alt:    #E9E4DD;
+  --color-text:      #2F3A4A;
+  --color-secondary: #6E7884;
+  --color-ochre:     #C7A35A;
+  --color-rose:      #B56A66;
+  --color-violet:    #8E88A8;
+  --font-serif:      'Literata', serif;
+  --font-sans:       'Manrope', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+/* --- Typography helpers --- */
+.font-literata-light  { font-family: var(--font-serif); font-weight: 300; }
+.font-literata-medium { font-family: var(--font-serif); font-weight: 500; }
+.font-manrope-medium  { font-family: var(--font-sans);  font-weight: 500; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.site-header {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-bg-alt);
+  padding: 0.9rem 0;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.logo-text:hover { color: var(--color-ochre); }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-ochre {
+  background-color: var(--color-ochre);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-ochre:hover { background-color: #b8943f; color: #fff; }
+.btn-sm.btn-ochre { padding: 0.45rem 1.1rem; font-size: 0.83rem; }
+
+/* ============================================
+   SHARED — labels & titles
+   ============================================ */
+
+.section-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ochre);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+/* ============================================
+   1. HERO
+   ============================================ */
+
+.section-hero {
+  background-color: var(--color-bg);
+}
+
+.hero-row {
+  min-height: calc(100vh - 58px);
+}
+
+.hero-content {
+  padding: 5rem 3rem 5rem 8%;
+  max-width: 700px;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+  color: var(--color-ochre);
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+
+.hero-desc {
+  color: var(--color-secondary);
+  max-width: 500px;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.hero-image-col { overflow: hidden; }
+.hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.early-bird-note {
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+}
+.early-bird-note strong { color: var(--color-text); }
+
+/* ============================================
+   2. PROBLEM
+   ============================================ */
+
+.section-problem {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 0;
+}
+
+.problem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.problem-list li {
+  padding: 0.75rem 0 0.75rem 1.6rem;
+  position: relative;
+  border-bottom: 1px solid rgba(47,58,74,0.08);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.problem-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-ochre);
+  font-weight: 500;
+}
+
+.reframe-inline {
+  border-left: 3px solid var(--color-ochre);
+  padding-left: 1.5rem;
+}
+
+/* ============================================
+   3. REFRAME
+   ============================================ */
+
+.section-reframe {
+  background-color: var(--color-text);
+  padding: 5rem 0;
+}
+
+.reframe-quote {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: #fff;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============================================
+   4. CZYM JEST TEN KURS
+   ============================================ */
+
+.section-czym-jest {
+  background-color: var(--color-bg);
+  padding: 5rem 0;
+}
+
+.course-card { padding: 2rem; }
+
+.course-card-yes {
+  background-color: var(--color-bg-alt);
+  border-top: 3px solid var(--color-ochre);
+}
+.course-card-no {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-bg-alt);
+  border-top: 3px solid var(--color-secondary);
+}
+
+.card-title-custom {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--color-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.card-list li {
+  padding: 0.45rem 0 0.45rem 1.4rem;
+  position: relative;
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+.course-card-yes .card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-ochre);
+  font-weight: 500;
+}
+.course-card-no .card-list li::before {
+  content: '×';
+  position: absolute;
+  left: 0.1rem;
+  color: var(--color-secondary);
+}
+
+/* ============================================
+   5. VIDEO
+   ============================================ */
+
+.section-video {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 0;
+}
+
+.video-placeholder {
+  background-color: #3a4a5a;
+  border-radius: 3px;
+  color: #fff;
+}
+.play-icon {
+  font-size: 3.5rem;
+  color: var(--color-ochre);
+  display: block;
+}
+
+/* ============================================
+   6. SPIS TREŚCI
+   ============================================ */
+
+.section-spis {
+  background-color: var(--color-bg);
+  padding: 5rem 0;
+}
+
+.module-card {
+  background-color: var(--color-bg-alt);
+  padding: 2rem;
+  border-top: 3px solid var(--color-violet);
+}
+
+.module-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-violet);
+  margin-bottom: 0.4rem;
+}
+
+.module-title {
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.module-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.module-list li {
+  padding: 0.35rem 0 0.35rem 1.3rem;
+  position: relative;
+  font-size: 0.88rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+.module-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0.3rem;
+  top: 0.25rem;
+  color: var(--color-violet);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.bonus-card {
+  background-color: rgba(142,136,168,0.1);
+  border: 1px dashed rgba(142,136,168,0.4);
+  padding: 2rem;
+  border-radius: 2px;
+}
+.bonus-item {
+  font-size: 0.88rem;
+  color: var(--color-secondary);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.format-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--color-text);
+  padding: 1.4rem 2rem;
+  border-radius: 2px;
+  gap: 0;
+}
+.format-item {
+  font-weight: 300;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.6);
+  padding: 0 1.25rem;
+  border-right: 1px solid rgba(255,255,255,0.14);
+  line-height: 1;
+}
+.format-item:last-child { border-right: none; }
+
+/* ============================================
+   7. DLA KOGO
+   ============================================ */
+
+.section-dla-kogo {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 0;
+}
+
+.audience-card { padding: 2rem; }
+.audience-yes {
+  background-color: var(--color-bg);
+  border-top: 3px solid var(--color-ochre);
+}
+.audience-no {
+  background-color: rgba(110,120,132,0.08);
+  border-top: 3px solid var(--color-secondary);
+}
+.audience-note {
+  font-size: 0.88rem;
+  color: var(--color-secondary);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ============================================
+   8. TRANSFORMACJA
+   ============================================ */
+
+.section-transformacja {
+  background-color: var(--color-bg);
+  padding: 5rem 0;
+}
+
+.transform-before {
+  background-color: rgba(181,106,102,0.07);
+  padding: 2.5rem;
+  border-top: 3px solid var(--color-rose);
+}
+.transform-after {
+  background-color: rgba(199,163,90,0.07);
+  padding: 2.5rem;
+  border-top: 3px solid var(--color-ochre);
+}
+
+.transform-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  margin-bottom: 1.25rem;
+}
+.transform-before .transform-label { color: var(--color-rose); }
+.transform-after  .transform-label { color: var(--color-ochre); }
+
+.transform-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.transform-list li {
+  padding: 0.6rem 0;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(47,58,74,0.06);
+}
+.transform-list li:last-child { border-bottom: none; }
+
+/* ============================================
+   9. O MNIE
+   ============================================ */
+
+.section-o-mnie {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 0;
+}
+
+.o-mnie-image {
+  width: 100%;
+  max-width: 300px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  margin: 0 auto;
+}
+
+.link-about {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--color-ochre);
+  text-decoration: none;
+  font-size: 0.93rem;
+}
+.link-about:hover { color: var(--color-text); }
+
+/* ============================================
+   10. FAQ
+   ============================================ */
+
+.section-faq {
+  background-color: var(--color-bg);
+  padding: 5rem 0;
+}
+
+.faq-accordion .accordion-item {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+.faq-accordion .accordion-button {
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.97rem;
+  padding: 1.2rem 0;
+  box-shadow: none;
+}
+.faq-accordion .accordion-button:not(.collapsed) {
+  color: var(--color-ochre);
+  background-color: transparent;
+  box-shadow: none;
+}
+.faq-accordion .accordion-button::after       { opacity: 0.35; }
+.faq-accordion .accordion-button:not(.collapsed)::after { opacity: 0.65; }
+.faq-accordion .accordion-body {
+  font-weight: 300;
+  color: var(--color-secondary);
+  padding: 0 2rem 1.4rem 0;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   11. FORMULARZ
+   ============================================ */
+
+.section-formularz {
+  background-color: var(--color-text);
+  padding: 6rem 0;
+}
+
+.section-title-light {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.early-bird-badge {
+  display: inline-block;
+  background-color: var(--color-ochre);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2px;
+}
+
+.waitlist-input {
+  background-color: rgba(255,255,255,0.92);
+  border: none;
+  border-radius: 2px 0 0 2px !important;
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+.waitlist-input:focus {
+  background-color: #fff;
+  box-shadow: none;
+  border-color: var(--color-ochre);
+}
+.waitlist-form .btn-ochre {
+  border-radius: 0 2px 2px 0;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.93rem;
+}
+
+.form-note {
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.82rem;
+  line-height: 1.85;
+}
+
+/* ============================================
+   12. TESTIMONIALE
+   ============================================ */
+
+.section-testimoniale {
+  background-color: var(--color-bg-alt);
+  padding: 4rem 0;
+}
+
+.testimonials-placeholder {
+  border: 1px dashed rgba(110,120,132,0.38);
+  padding: 3rem 2rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background-color: var(--color-text);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.32);
+}
+footer a { color: rgba(255,255,255,0.32); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.6); }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 991px) {
+  .hero-content {
+    padding: 4rem 2.5rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-problem,
+  .section-czym-jest,
+  .section-video,
+  .section-spis,
+  .section-dla-kogo,
+  .section-transformacja,
+  .section-o-mnie,
+  .section-faq     { padding: 3.5rem 0; }
+
+  .section-reframe,
+  .section-formularz { padding: 3.5rem 0; }
+
+  .hero-content { padding: 3.5rem 1.5rem; }
+  .hero-title   { font-size: 1.85rem; }
+
+  .format-bar { flex-direction: column; align-items: center; gap: 0.4rem; }
+  .format-item { border-right: none; padding: 0.2rem 0; }
+
+  .input-group { flex-direction: column; gap: 0.5rem; }
+  .waitlist-input          { border-radius: 2px !important; }
+  .waitlist-form .btn-ochre { border-radius: 2px; width: 100%; }
+
+  .transform-before,
+  .transform-after { padding: 2rem 1.5rem; }
+}

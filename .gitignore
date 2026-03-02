@@ -1,0 +1,9 @@
+# Sensitive files
+github access token.txt
+*.txt
+
+# macOS
+.DS_Store
+
+# Markdown source files (optional - remove if you want these in repo)
+*.md

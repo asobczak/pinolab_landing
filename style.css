@@ -45,18 +45,36 @@ h1, h2, h3, h4 {
 .site-header {
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-bg-alt);
-  padding: 0.9rem 0;
+  padding: 0.85rem 0;
 }
 
-.logo-text {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-size: 1.35rem;
-  color: var(--color-text);
-  letter-spacing: 0.05em;
-  text-decoration: none;
+.logo-link { display: inline-flex; align-items: center; text-decoration: none; }
+
+.site-logo {
+  height: 38px;
+  width: auto;
+  display: block;
 }
-.logo-text:hover { color: var(--color-ochre); }
+
+.logo-footer {
+  height: 28px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.45;
+}
+.logo-footer:hover { opacity: 0.7; }
+
+.nav-link-custom {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.nav-link-custom:hover { color: var(--color-ochre); }
 
 /* ============================================
    BUTTONS
@@ -115,8 +133,8 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
-  padding: 5rem 3rem 5rem 8%;
-  max-width: 700px;
+  padding: 5rem 2rem 5rem 1rem;
+  max-width: 640px;
 }
 
 .hero-title {
@@ -591,6 +609,120 @@ footer {
 }
 footer a { color: rgba(255,255,255,0.32); text-decoration: none; }
 footer a:hover { color: rgba(255,255,255,0.6); }
+
+/* ============================================
+   O MNIE — PAGE STYLES
+   ============================================ */
+
+.section-om-hero {
+  background-color: var(--color-bg);
+  padding: 5rem 0;
+}
+
+.om-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.om-lead {
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+  line-height: 1.85;
+}
+
+.om-hero-img {
+  width: 100%;
+  max-width: 340px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  margin: 0 auto;
+}
+
+.section-om-story {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 0;
+}
+
+.section-om-praca {
+  background-color: var(--color-bg);
+  padding: 5rem 0;
+}
+
+.om-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.om-tag {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-bg-alt);
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  background-color: var(--color-bg-alt);
+}
+
+.section-om-pytania {
+  background-color: var(--color-text);
+  padding: 5rem 0;
+}
+
+.section-om-pytania .section-label { color: var(--color-ochre); }
+
+.section-om-pytania .section-title,
+.section-om-pytania p {
+  color: rgba(255,255,255,0.85);
+}
+
+.om-quote {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.65);
+  border-left: 3px solid var(--color-ochre);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  line-height: 1.7;
+}
+
+.section-om-kurs {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 0;
+}
+
+/* ============================================
+   DECORATIVE IMAGES
+   ============================================ */
+
+.deco-img-tall {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 2px;
+}
+
+.image-strip {
+  width: 100%;
+  overflow: hidden;
+  height: 260px;
+}
+.image-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
 
 /* ============================================
    RESPONSIVE

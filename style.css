@@ -358,11 +358,29 @@ h1, h2, h3, h4 {
   padding: 2rem;
   border-radius: 2px;
 }
-.bonus-item {
-  font-size: 0.88rem;
-  color: var(--color-secondary);
+
+.bonus-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+.bonus-list li {
+  padding: 0.65rem 0 0.65rem 1.6rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
   line-height: 1.65;
+  border-bottom: 1px solid rgba(142,136,168,0.2);
+}
+.bonus-list li:last-child { border-bottom: none; }
+.bonus-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--color-ochre);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .format-bar {
@@ -383,6 +401,49 @@ h1, h2, h3, h4 {
   line-height: 1;
 }
 .format-item:last-child { border-right: none; }
+
+/* ============================================
+   6b. FORMAT KURSU
+   ============================================ */
+
+.section-format {
+  background-color: var(--color-text);
+  padding: 5rem 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid rgba(199,163,90,0.35);
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--color-ochre);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.85);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.stat-desc {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+  line-height: 1.65;
+}
 
 /* ============================================
    7. DLA KOGO
@@ -724,6 +785,12 @@ footer a:hover { color: rgba(255,255,255,0.6); }
   display: block;
 }
 
+.navy-strip {
+  width: 100%;
+  height: 180px;
+  background-color: var(--color-text);
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -740,6 +807,7 @@ footer a:hover { color: rgba(255,255,255,0.6); }
   .section-czym-jest,
   .section-video,
   .section-spis,
+  .section-format,
   .section-dla-kogo,
   .section-transformacja,
   .section-o-mnie,
@@ -751,8 +819,7 @@ footer a:hover { color: rgba(255,255,255,0.6); }
   .hero-content { padding: 3.5rem 1.5rem; }
   .hero-title   { font-size: 1.85rem; }
 
-  .format-bar { flex-direction: column; align-items: center; gap: 0.4rem; }
-  .format-item { border-right: none; padding: 0.2rem 0; }
+  .stat-card { padding: 1.5rem 0.5rem; }
 
   .input-group { flex-direction: column; gap: 0.5rem; }
   .waitlist-input          { border-radius: 2px !important; }

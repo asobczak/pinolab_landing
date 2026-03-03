@@ -129,7 +129,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-row {
-  min-height: calc(100vh - 58px);
+  min-height: calc(68vh - 58px);
 }
 
 .hero-content {

@@ -163,6 +163,14 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.hero-image-col::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 58, 74, 0.18);
+  pointer-events: none;
 }
 .hero-image {
   width: 100%;
@@ -185,24 +193,18 @@ h1, h2, h3, h4 {
   padding: 5rem 0;
 }
 
-.problem-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.problem-list li {
-  padding: 0.75rem 0 0.75rem 1.6rem;
-  position: relative;
-  border-bottom: 1px solid rgba(47,58,74,0.08);
+.problem-tile {
+  background-color: var(--color-bg);
+  border-left: 2px solid var(--color-ochre);
+  padding: 1.75rem 1.75rem 1.75rem 1.75rem;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
   font-size: 1rem;
-  line-height: 1.7;
-}
-.problem-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--color-ochre);
-  font-weight: 500;
+  line-height: 1.75;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
 }
 
 .reframe-inline {
@@ -235,7 +237,7 @@ h1, h2, h3, h4 {
   padding: 5rem 0;
 }
 
-.course-card { padding: 2rem; }
+.course-card { padding: 2.5rem; }
 
 .course-card-yes {
   background-color: var(--color-bg-alt);
@@ -263,11 +265,13 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 .card-list li {
-  padding: 0.45rem 0 0.45rem 1.4rem;
+  padding: 0.9rem 0 0.9rem 1.6rem;
   position: relative;
   font-size: 0.93rem;
   line-height: 1.65;
+  border-bottom: 1px solid rgba(47,58,74,0.07);
 }
+.card-list li:last-child { border-bottom: none; }
 .course-card-yes .card-list li::before {
   content: '✓';
   position: absolute;
@@ -456,7 +460,7 @@ h1, h2, h3, h4 {
   padding: 5rem 0;
 }
 
-.audience-card { padding: 2rem; }
+.audience-card { padding: 2.5rem; }
 .audience-yes {
   background-color: var(--color-bg);
   border-top: 3px solid var(--color-ochre);

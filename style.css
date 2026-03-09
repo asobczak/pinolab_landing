@@ -209,6 +209,7 @@ h1, h2, h3, h4 {
   align-items: center;
 }
 
+
 .reframe-inline {
   border-left: 3px solid var(--color-ochre);
   padding-left: 1.5rem;
@@ -487,43 +488,52 @@ h1, h2, h3, h4 {
   padding: 5rem 0;
 }
 
-.transform-before {
-  background-color: rgba(181,106,102,0.07);
-  padding: 2.5rem;
-  border-top: 3px solid var(--color-rose);
-}
-.transform-after {
-  background-color: rgba(199,163,90,0.07);
-  padding: 2.5rem;
-  border-top: 3px solid var(--color-ochre);
+.transform-table {
+  border-top: 1px solid rgba(47,58,74,0.1);
 }
 
-.transform-label {
+.transform-row {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(47,58,74,0.1);
+}
+
+.transform-col-label {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.6rem;
 }
-.transform-before .transform-label { color: var(--color-rose); }
-.transform-after  .transform-label { color: var(--color-ochre); }
+.transform-col-before .transform-col-label { color: var(--color-rose); }
+.transform-col-after  .transform-col-label { color: var(--color-ochre); }
 
-.transform-list {
-  list-style: none;
-  padding: 0;
+.transform-col-text {
+  font-size: 1rem;
+  line-height: 1.7;
   margin: 0;
+  color: var(--color-text);
 }
-.transform-list li {
-  padding: 0.6rem 0;
-  font-family: var(--font-serif);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  border-bottom: 1px solid rgba(47,58,74,0.06);
+
+.transform-arrow {
+  color: var(--color-ochre);
+  font-size: 1.4rem;
+  text-align: center;
+  padding-top: 0.2rem;
+  opacity: 0.9;
 }
-.transform-list li:last-child { border-bottom: none; }
+
+@media (max-width: 767px) {
+  .transform-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+  .transform-arrow { display: none; }
+}
 
 /* ============================================
    9. O MNIE
@@ -537,8 +547,7 @@ h1, h2, h3, h4 {
 .o-mnie-image {
   width: 100%;
   max-width: 380px;
-  height: 460px;
-  object-fit: cover;
+  height: auto;
   border-radius: 2px;
   display: block;
   margin: 0 auto;
@@ -827,12 +836,19 @@ footer a:hover { color: rgba(255,255,255,0.6); }
   .hero-content { padding: 3.5rem 1.5rem; }
   .hero-title   { font-size: 1.85rem; }
 
+  .hero-image-col {
+    min-height: 300px;
+    height: 300px;
+  }
+  .hero-image {
+    height: 100%;
+    transform: none;
+  }
+
   .stat-card { padding: 1.5rem 0.5rem; }
 
   .input-group { flex-direction: column; gap: 0.5rem; }
   .waitlist-input          { border-radius: 2px !important; }
   .waitlist-form .btn-ochre { border-radius: 2px; width: 100%; }
 
-  .transform-before,
-  .transform-after { padding: 2rem 1.5rem; }
 }
